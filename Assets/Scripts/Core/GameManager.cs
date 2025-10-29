@@ -42,5 +42,16 @@ namespace Core
         {
             _state = GameState.GameClear;
         }
+        public void PauseGame()
+        {
+            _state = GameState.Paused;
+            Time.timeScale = 0f;
+        }
+
+        public void ResumeGame()
+        {
+            _state = GameState.Playing;
+            Time.timeScale = 1f;
+        }
     }
 }

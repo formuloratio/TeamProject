@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Core;
 
 public class PopupManager : MonoBehaviour
 {
@@ -31,29 +32,36 @@ public class PopupManager : MonoBehaviour
         bool show = !popupCanvas.activeSelf;
         popupCanvas.SetActive(show);
 
-        // 팝업 열릴 때 게임 일시정지
-        Time.timeScale = show ? 0f : 1f;
+        if (show)
+            GameManager.Instance.OnGamePaused();
+        else
+            GameManager.Instance.OnGameStarted();
     }
 
     //게임 새로 재시작 
     public void OnRestartButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("GamePlayScene");
+        GameManager.Instance.OnGameStarted();
+        SceneTransitionManager.Instance.FadeAndLoadScene("GamePlayScene");
+
     }
     //게임 이어서 시작 
     public void OnResumeButton()
     {
         if (popupCanvas != null)
             popupCanvas.SetActive(false); // 팝업 사라지게
+
         Time.timeScale = 1f; // 시간 재개
+        GameManager.Instance.OnGameStarted();
     }
 
     //타이틀로 이동
     public void OnTitleButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("TitleScene");
+        GameManager.Instance.OnGamePaused();
+        SceneTransitionManager.Instance.FadeAndLoadScene("TitleScene");
     }
 
     //게임 종료
