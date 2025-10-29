@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player_ : MonoBehaviour
 {
     public float moveSpeed = 7f;
-    public float jumpForce = 5f;
+    public float jumpForce = 15f;
 
     private Rigidbody2D rb;
     void Start()
