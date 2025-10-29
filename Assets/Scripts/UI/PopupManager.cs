@@ -35,11 +35,18 @@ public class PopupManager : MonoBehaviour
         Time.timeScale = show ? 0f : 1f;
     }
 
-    //재시작 버튼
+    //게임 새로 재시작 
     public void OnRestartButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("GamePlayScene");
+    }
+    //게임 이어서 시작 
+    public void OnResumeButton()
+    {
+        if (popupCanvas != null)
+            popupCanvas.SetActive(false); // 팝업 사라지게
+        Time.timeScale = 1f; // 시간 재개
     }
 
     //타이틀로 이동
