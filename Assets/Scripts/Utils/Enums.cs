@@ -10,6 +10,6 @@ namespace Utils
 
         public enum GameState
         {
-            Run, Playing, Pause, End
+            Title, Playing, Paused, GameOver, GameClear
         }
 }
