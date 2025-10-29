@@ -7,4 +7,9 @@ namespace Utils
             Fire,Water
 
         }
+
+        public enum GameState
+        {
+            Run, Playing, Pause, End
+        }
 }
