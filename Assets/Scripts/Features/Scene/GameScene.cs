@@ -1,4 +1,4 @@
-namespace Features.Entities.Scene
+namespace Features.Scene
 {
     public class GameScene
     {

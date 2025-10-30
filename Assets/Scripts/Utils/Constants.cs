@@ -5,4 +5,9 @@ namespace Utils
             public const string PreviousSceneKey = "fwClone.PreviousScenePath";
             public const string BootstrapscenePath = "Assets/Scenes/Initialization.unity";
     }
+
+    public static class GameStateConstans
+    {
+        public const int MaxStageNum = 1;
+    }
 }
