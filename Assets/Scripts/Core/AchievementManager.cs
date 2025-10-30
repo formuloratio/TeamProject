@@ -10,7 +10,8 @@ namespace Core
     {
         public static AchievementManager  Instance { get; private set; }
         private DataService _dataService;
-        private const string DataPrefix = "Achievement";
+        private const string DataFilePrefix = "Achievement";
+        private const string DataFileSuffix = "Data";
         private const string ResourcesPath = "ScriptableObjects/Achievements";
         private Dictionary<string, Achievement> _achievements = new Dictionary<string, Achievement>();
 
@@ -25,7 +26,7 @@ namespace Core
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            _dataService = new DataService(DataPrefix);
+            _dataService = new DataService(DataFilePrefix);
             InitializeAchievements();
             LoadProgress();
         }
@@ -116,11 +117,11 @@ namespace Core
                 });
             }
 
-            _dataService.Save(saveData, DataPrefix);
+            _dataService.Save(saveData, DataFileSuffix);
         }
         private void LoadProgress()
         {
-            var saveData = _dataService.Load<AchievementSaveData>(DataPrefix);
+            var saveData = _dataService.Load<AchievementSaveData>(DataFileSuffix);
 
             if (saveData?.progressList == null || saveData.progressList.Count == 0)
             {
