@@ -12,7 +12,7 @@ namespace Utils
             #if UNITY_EDITOR
             if (SceneManager.GetActiveScene().path != SceneLoaderConstants.BootstrapscenePath)
             {
-                string previousScene = EditorPrefs.GetString(SceneLoaderConstants.BootstrapscenePath);
+                string previousScene = EditorPrefs.GetString(SceneLoaderConstants.PreviousSceneKey);
                 if (!string.IsNullOrEmpty(previousScene))
                 {
                     SceneLoader.SceneToLoadOverride = previousScene;
