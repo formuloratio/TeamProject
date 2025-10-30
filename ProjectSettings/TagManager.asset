@@ -4,8 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - AchievementSlot
   - AchievementPanel
+=======
+  - ObstacleFire
+  - ObstacleWater
+  - PlayerFire
+  - PlayerWater
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
@@ -13,8 +20,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Ground
   - 
   - 
   - 
