@@ -11,6 +11,9 @@ namespace Utils
             try
             {
                 string path = GetFilePath(fileName);
+                string tempPath = path + ".tmp";
+                string backupPath = path + ".backup";
+
                 string json = JsonUtility.ToJson(data, true);
 
                 string directory = Path.GetDirectoryName(path);
@@ -18,37 +21,77 @@ namespace Utils
                 {
                     Directory.CreateDirectory(directory);
                 }
-
-                File.WriteAllText(path, json);
+                File.WriteAllText(tempPath, json);
+                if (File.Exists(path))
+                {
+                    if (File.Exists(backupPath))
+                    {
+                        File.Delete(backupPath);
+                    }
+                    File.Move(path, backupPath);
+                }
+                File.Move(tempPath, path);
+                if (File.Exists(backupPath))
+                {
+                    File.Delete(backupPath);
+                }
+                Debug.Log($"[JsonSerializer] Save Success!!\n Path: {Application.persistentDataPath}{fileName}");
                 return true;
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
+                string path = GetFilePath(fileName);
+                string backupPath = path + ".backup";
+                Debug.LogError($"[JsonSerializer] : {e.Message}");
+                if (File.Exists(backupPath))
+                {
+                    try
+                    {
+                        File.Copy(backupPath, path, true);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogError($"[JsonSerializer] : {ex.Message}");
+                    }
+                }
+
                 return false;
             }
         }
 
         public static T LoadFromJson<T>(string fileName) where T : new()
         {
-            try
-            {
-                string path = GetFilePath(fileName);
+            string path = GetFilePath(fileName);
+            string backupPath = path + ".backup";
 
-                if (!File.Exists(path))
+            if (File.Exists(path))
+            {
+                try
                 {
-                    return new T();
+                    string json = File.ReadAllText(path);
+                    return JsonUtility.FromJson<T>(json);
                 }
-
-                string json = File.ReadAllText(path);
-                T data = JsonUtility.FromJson<T>(json);
-                return data;
+                catch (Exception e)
+                {
+                    Debug.LogError($"[JsonSerializer] : {e.Message}");
+                }
             }
-            catch (Exception e)
+            if (File.Exists(backupPath))
             {
-                Debug.LogException(e);
-                return new T();
+                try
+                {
+                    string json = File.ReadAllText(backupPath);
+                    T data = JsonUtility.FromJson<T>(json);
+                    SaveToJson(data, fileName);
+                    return data;
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"[JsonSerializer] : {e.Message}");
+                }
             }
+            return new T();
         }
 
         public static bool FileExists(string fileName)
@@ -70,13 +113,14 @@ namespace Utils
             }
             catch (Exception e)
             {
+                Debug.LogException(e);
                 return false;
             }
         }
 
         private static string GetFilePath(string fileName)
         {
-            Debug.Log($"Save Path: {Application.persistentDataPath}{fileName}");
+
             return Path.Combine(Application.persistentDataPath, fileName);
         }
     }

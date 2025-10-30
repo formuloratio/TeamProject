@@ -14,10 +14,8 @@ namespace Test
         }
         void Start()
         {
-            Achievement clear = _achievementManager.GetAchievement("Clear_Equal_1");
-            Achievement death = _achievementManager.GetAchievement("Death_Over_2");
+            _achievementManager.AddProgress("Death_Over_2",2);
 
-            Debug.Log($"clear: {clear.AchievementData.clearType} + {clear.AchievementData.targetCount} + {clear.AchievementData.displayName} + {clear.AchievementData.achievementType}");
         }
     }
 }

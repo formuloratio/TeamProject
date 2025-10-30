@@ -55,17 +55,5 @@ namespace Core
             }
             return fullName;
         }
-
-        public bool Exists(string fileName)
-        {
-            string fullFileName = GetFullFileName(fileName);
-            return JsonSerializer.FileExists(fullFileName);
-        }
-
-        public bool Delete(string fileName)
-        {
-            string fullFileName = GetFullFileName(fileName);
-            return JsonSerializer.DeleteFile(fullFileName);
-        }
     }
 }
