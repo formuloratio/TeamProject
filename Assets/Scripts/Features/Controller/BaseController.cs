@@ -5,9 +5,12 @@ public class BaseController : MonoBehaviour
 
     [Header("Movement Settings")]
     [SerializeField] protected float moveSpeed = 5f;
-    [SerializeField] protected float jumpForce = 5f;
+    [SerializeField] protected float jumpForce = 4f;
     [SerializeField] protected LayerMask groundLayer;//바닥 감지용 레이어
     [SerializeField] protected float groundCheckDistance = 0.2f; // 바닥감지 거리용
+
+    [Header("Selection Icon")]
+    [SerializeField] private GameObject selectionIcon; // 하위 아이콘 연결
 
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
@@ -68,6 +71,12 @@ public class BaseController : MonoBehaviour
             jumpPressed = false;
             jumpTimer = jumpCooldown; // 점프하고 0.1초간 바닥감지 X
         }
+        else
+        {
+            // 공중에 있을 땐 입력을 바로 초기화
+            if (!isGrounded)
+                jumpPressed = false;
+        }
     }
 
     protected virtual void Move()
@@ -89,7 +98,7 @@ public class BaseController : MonoBehaviour
     {
         //캐릭터 아래로 레이 쏘기
 
-        float extraHeight = 0.2f;
+        float extraHeight = 0.15f;
 
         Vector2 FootRay = new Vector2(transform.position.x, transform.position.y - (GetComponent<Collider2D>().bounds.extents.y));
 
@@ -104,10 +113,24 @@ public class BaseController : MonoBehaviour
     protected virtual void UpdateAnimation()
     {
         if (anim == null) return;
-        anim.SetBool("isMove", Mathf.Abs(rb.velocity.x) > 0.1f);
-        anim.SetBool("isJump", !isGrounded);
+        
+        if (!isGrounded)
+        {
+            anim.SetBool("isJump", true);
+            anim.SetBool("isMove", false); // 공중에서는 Move 끄기
+        }
+        else
+        {
+            anim.SetBool("isMove", Mathf.Abs(rb.velocity.x) > 0.1f);
+            anim.SetBool("isJump", false);
+        }
     }
 
+    public void Selected(bool isSelected)
+    {
+        if(selectionIcon != null)
+            selectionIcon.SetActive(isSelected);
+    }
 
 }
 

@@ -38,12 +38,17 @@ public class PlayerController : MonoBehaviour
         currentPlayer = player1;
         player1.SetActive(true);
         player2.SetActive(false);
+
+        player1.Selected(true);
+        player2.Selected(false);
     }
 
     private void Update()
     {
         if (currentPlayer == null) return;
 
+        //1번입력시 드워프
+        //2번입력시 엘프
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SwitchPlayer(player1);
 
@@ -51,13 +56,18 @@ public class PlayerController : MonoBehaviour
             SwitchPlayer(player2);
     }
 
+    //주 플레이어를 한 캐릭터만 선택하도록
     void SwitchPlayer(BaseController newPlayer)
     {
         if (newPlayer == null || currentPlayer == null) return;
         if (currentPlayer == newPlayer) return;
 
         currentPlayer.SetActive(false);
+        currentPlayer.Selected(false);
+
         newPlayer.SetActive(true);
+        newPlayer.Selected(true);
+
         currentPlayer = newPlayer;
     }
 }
