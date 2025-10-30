@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
         currentPlayer = player1;
         player1.SetActive(true);
         player2.SetActive(false);
+
+        player1.Selected(true);
+        player2.Selected(false);
     }
 
     private void Update()
@@ -60,7 +63,11 @@ public class PlayerController : MonoBehaviour
         if (currentPlayer == newPlayer) return;
 
         currentPlayer.SetActive(false);
+        currentPlayer.Selected(false);
+
         newPlayer.SetActive(true);
+        newPlayer.Selected(true);
+
         currentPlayer = newPlayer;
     }
 }
