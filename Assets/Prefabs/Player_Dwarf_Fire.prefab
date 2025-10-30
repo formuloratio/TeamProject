@@ -152,7 +152,7 @@ MonoBehaviour:
   jumpForce: 5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   groundCheckDistance: 0.5
   selectionIcon: {fileID: 6589199119138096663}
   playerType: 1
