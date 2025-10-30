@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     {
         if (currentPlayer == null) return;
 
+        //1번입력시 드워프
+        //2번입력시 엘프
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SwitchPlayer(player1);
 
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
             SwitchPlayer(player2);
     }
 
+    //주 플레이어를 한 캐릭터만 선택하도록
     void SwitchPlayer(BaseController newPlayer)
     {
         if (newPlayer == null || currentPlayer == null) return;
