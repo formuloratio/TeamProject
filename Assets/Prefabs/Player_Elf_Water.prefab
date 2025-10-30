@@ -155,6 +155,7 @@ MonoBehaviour:
     m_Bits: 0
   groundCheckDistance: 0.5
   selectionIcon: {fileID: 8692206522009052144}
+  playerType: 2
 --- !u!1 &7319942802627861165
 GameObject:
   m_ObjectHideFlags: 0
