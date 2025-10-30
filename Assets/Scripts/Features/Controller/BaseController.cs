@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Features.Entities;
+using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BaseController : MonoBehaviour
 
     [Header("Selection Icon")]
     [SerializeField] private GameObject selectionIcon; // 하위 아이콘 연결
+
+    [SerializeField] private PlayerType playerType; // 플레이어 속성
 
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
@@ -27,6 +30,7 @@ public class BaseController : MonoBehaviour
     private float jumpCooldown = 0.1f;
     private float jumpTimer = 0f;
 
+    public PlayerType Element => playerType;
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -130,6 +134,12 @@ public class BaseController : MonoBehaviour
     {
         if(selectionIcon != null)
             selectionIcon.SetActive(isSelected);
+    }
+
+    //착지 확인용
+    public bool IsGrounded()
+    {
+        return isGrounded;
     }
 
 }

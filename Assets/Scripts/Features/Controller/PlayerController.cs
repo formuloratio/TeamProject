@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour
         if (newPlayer == null || currentPlayer == null) return;
         if (currentPlayer == newPlayer) return;
 
+        // 점프 중 전환 금지
+        if (!currentPlayer.IsGrounded())
+            return;
+
         currentPlayer.SetActive(false);
         currentPlayer.Selected(false);
 
