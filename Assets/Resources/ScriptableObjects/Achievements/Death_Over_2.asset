@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Death_Over_2
   m_EditorClassIdentifier: 
   id: Death_Over_2
-  displayName: "2\uBC88\uC774\uC0C1 \uC0AC\uB9DD"
-  description: "2\uBC88\uC774\uC0C1 \uC0AC\uB9DD"
+  displayName: Death over 2 more
+  description: Death over 2 more
   targetCount: 2
   clearType: 2
   achievementType: 3

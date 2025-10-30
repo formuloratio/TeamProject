@@ -10,6 +10,7 @@ namespace Features.Scene
         private GameManager _gameManager;
         private SceneTransitionManager _sceneTransitionManager;
         [SerializeField] private string nextSceneName = "GamePlayScene";
+        private string achievementsSceneName = "AchievementScene";
 
         void Awake()
         {
@@ -22,6 +23,11 @@ namespace Features.Scene
         {
             _gameManager.OnGameStarted();
             _sceneTransitionManager.FadeAndLoadScene(nextSceneName);
+        }
+
+        public void OnAchievementsLoaded()
+        {
+            _sceneTransitionManager.LoadScene(achievementsSceneName);
         }
 
         public void OnQuitClicked()

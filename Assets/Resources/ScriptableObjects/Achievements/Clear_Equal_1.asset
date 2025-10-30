@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Clear_Equal_1
   m_EditorClassIdentifier: 
   id: Clear_Equal_1
-  displayName: "1\uC2A4\uD14C\uC774\uC9C0 \uD074\uB9AC\uC5B4"
-  description: "1\uC2A4\uD14C\uC774\uC9C0 \uD074\uB9AC\uC5B4"
+  displayName: 1 Stage Clear
+  description: 1 Stage Clear
   targetCount: 1
   clearType: 0
   achievementType: 0
