@@ -26,7 +26,7 @@ public class SwitchingManager : MonoBehaviour
 
     }
 
-    public int[] switchTagCompare = new int[10];
+    public int[] switchTagCompare = new int[20];
     public bool isSwitching = false;
 
 }
