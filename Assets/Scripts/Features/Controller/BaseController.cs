@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
@@ -6,11 +6,11 @@ public class BaseController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] protected float moveSpeed = 5f;
     [SerializeField] protected float jumpForce = 4f;
-    [SerializeField] protected LayerMask groundLayer;//¹Ù´Ú °¨Áö¿ë ·¹ÀÌ¾î
-    [SerializeField] protected float groundCheckDistance = 0.2f; // ¹Ù´Ú°¨Áö °Å¸®¿ë
+    [SerializeField] protected LayerMask groundLayer;//ë°”ë‹¥ ê°ì§€ìš© ë ˆì´ì–´
+    [SerializeField] protected float groundCheckDistance = 0.2f; // ë°”ë‹¥ê°ì§€ ê±°ë¦¬ìš©
 
     [Header("Selection Icon")]
-    [SerializeField] private GameObject selectionIcon; // ÇÏÀ§ ¾ÆÀÌÄÜ ¿¬°á
+    [SerializeField] private GameObject selectionIcon; // í•˜ìœ„ ì•„ì´ì½˜ ì—°ê²°
 
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
@@ -19,11 +19,11 @@ public class BaseController : MonoBehaviour
     protected bool isGrounded = false;
     protected bool isActive = false;
 
-    //ÀÔ·Â°ª ÀúÀå
+    //ì…ë ¥ê°’ ì €ì¥
     private float moveInput;
     private bool jumpPressed;
 
-    //¿¬¼ÓÁ¡ÇÁ ¹æÁö
+    //ì—°ì†ì í”„ ë°©ì§€
     private float jumpCooldown = 0.1f;
     private float jumpTimer = 0f;
 
@@ -37,14 +37,14 @@ public class BaseController : MonoBehaviour
     public void SetActive(bool value)
     {
         isActive = value;
-        rb.velocity = Vector2.zero; //ÀüÈ¯½Ã °ü¼º 0 
+        rb.velocity = Vector2.zero; //ì „í™˜ì‹œ ê´€ì„± 0 
     }
 
     protected virtual void Update()
     {
         if (!isActive) return;
 
-        //ÀÔ·Â°¨Áö
+        //ì…ë ¥ê°ì§€
         moveInput = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -59,21 +59,21 @@ public class BaseController : MonoBehaviour
 
         if (jumpTimer > 0)
             jumpTimer -= Time.fixedDeltaTime;
-        //¹Ù´Ú°¨Áö
+        //ë°”ë‹¥ê°ì§€
         CheckGround();
-        //ÀÌµ¿
+        //ì´ë™
         Move();
 
-        //Á¡ÇÁ
+        //ì í”„
         if (jumpPressed && isGrounded && jumpTimer <= 0)
         {
             Jump();
             jumpPressed = false;
-            jumpTimer = jumpCooldown; // Á¡ÇÁÇÏ°í 0.1ÃÊ°£ ¹Ù´Ú°¨Áö X
+            jumpTimer = jumpCooldown; // ì í”„í•˜ê³  0.1ì´ˆê°„ ë°”ë‹¥ê°ì§€ X
         }
         else
         {
-            // °øÁß¿¡ ÀÖÀ» ¶© ÀÔ·ÂÀ» ¹Ù·Î ÃÊ±âÈ­
+            // ê³µì¤‘ì— ìˆì„ ë• ì…ë ¥ì„ ë°”ë¡œ ì´ˆê¸°í™”
             if (!isGrounded)
                 jumpPressed = false;
         }
@@ -96,7 +96,7 @@ public class BaseController : MonoBehaviour
 
     protected virtual void CheckGround()
     {
-        //Ä³¸¯ÅÍ ¾Æ·¡·Î ·¹ÀÌ ½î±â
+        //ìºë¦­í„° ì•„ë˜ë¡œ ë ˆì´ ì˜ê¸°
 
         float extraHeight = 0.15f;
 
@@ -105,7 +105,7 @@ public class BaseController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(FootRay, Vector2.down, extraHeight, groundLayer);
         isGrounded = hit.collider != null;
 
-        // µğ¹ö±×¿ë ·¹ÀÌ Ç¥½Ã 
+        // ë””ë²„ê·¸ìš© ë ˆì´ í‘œì‹œ 
         Color color = isGrounded ? Color.green : Color.red;
         Debug.DrawRay(FootRay, Vector2.down * extraHeight, color);
     }
@@ -117,7 +117,7 @@ public class BaseController : MonoBehaviour
         if (!isGrounded)
         {
             anim.SetBool("isJump", true);
-            anim.SetBool("isMove", false); // °øÁß¿¡¼­´Â Move ²ô±â
+            anim.SetBool("isMove", false); // ê³µì¤‘ì—ì„œëŠ” Move ë„ê¸°
         }
         else
         {

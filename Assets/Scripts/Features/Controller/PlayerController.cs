@@ -1,4 +1,4 @@
-using Core;
+ï»¿using Core;
 using Features.Entities;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        // ÀÚµ¿ Å½»ö
+        // ìë™ íƒìƒ‰
         if (player1 == null || player2 == null)
         {
             BaseController[] players = FindObjectsOfType<BaseController>();
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // ÃÊ±â È°¼ºÈ­ ¼³Á¤
+        // ì´ˆê¸° í™œì„±í™” ì„¤ì •
         currentPlayer = player1;
         player1.SetActive(true);
         player2.SetActive(false);
@@ -47,8 +47,8 @@ public class PlayerController : MonoBehaviour
     {
         if (currentPlayer == null) return;
 
-        //1¹øÀÔ·Â½Ã µå¿öÇÁ
-        //2¹øÀÔ·Â½Ã ¿¤ÇÁ
+        //1ë²ˆì…ë ¥ì‹œ ë“œì›Œí”„
+        //2ë²ˆì…ë ¥ì‹œ ì—˜í”„
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SwitchPlayer(player1);
 
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             SwitchPlayer(player2);
     }
 
-    //ÁÖ ÇÃ·¹ÀÌ¾î¸¦ ÇÑ Ä³¸¯ÅÍ¸¸ ¼±ÅÃÇÏµµ·Ï
+    //ì£¼ í”Œë ˆì´ì–´ë¥¼ í•œ ìºë¦­í„°ë§Œ ì„ íƒí•˜ë„ë¡
     void SwitchPlayer(BaseController newPlayer)
     {
         if (newPlayer == null || currentPlayer == null) return;
