@@ -6,12 +6,22 @@ using Core;
 
 public class PopupManager : MonoBehaviour
 {
+    public static PopupManager Instance;
     [Header("Popup UI")]
     public GameObject popupCanvas; // PopupCanvas 연결
-
-    void Start()
+    private void Awake()
     {
-        // 시작할 때 팝업 숨기기
+        // 싱글톤 처리
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // 팝업 숨기기
         if (popupCanvas != null)
             popupCanvas.SetActive(false);
     }
@@ -31,6 +41,14 @@ public class PopupManager : MonoBehaviour
 
         bool show = !popupCanvas.activeSelf;
         popupCanvas.SetActive(show);
+
+        CanvasGroup cg = popupCanvas.GetComponent<CanvasGroup>();
+        if (cg == null)
+            cg = popupCanvas.AddComponent<CanvasGroup>();
+
+        // 팝업 활성화 상태에 맞춰 버튼 클릭 가능하도록 설정
+        cg.interactable = show;
+        cg.blocksRaycasts = show;
 
         if (show)
             GameManager.Instance.OnGamePaused();
