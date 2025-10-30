@@ -3,7 +3,7 @@ using Features.Entities;
 using UnityEngine;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     Player _player;
 
