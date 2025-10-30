@@ -6,16 +6,27 @@ namespace Features.Entities
     {
         protected GameObject obstacleFire;
         protected GameObject obstacleWater;
-        
+
         protected int obstacleIndex { get; set; }
         protected int fireIndex { get { return 0; } }
         protected int waterIndex { get { return 1; } }
-        
-        protected bool isSwitching { get; set; }
+
         protected bool isFire { get; set; }
         protected bool isWater { get; set; }
         protected int[] switchIndexArray;
 
-        public abstract void Interact();
+        public virtual void GetObjectIndex() //오브젝트 순서에 따른 인덱스 추출
+        {
+            Transform parentTransform = this.transform;
+            for (int i = 0; i < parentTransform.childCount; i++)
+            {
+                Transform childTransform = parentTransform.GetChild(i);
+
+                if (childTransform.gameObject.activeSelf)
+                {
+                    obstacleIndex = i;
+                }
+            }
+        }
     }
 }

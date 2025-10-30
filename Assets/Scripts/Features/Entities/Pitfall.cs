@@ -3,25 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle_Pitfall : InteractionObject
+public class Pitfall : Obstacle
 {
-    public override void Interact()
-    {
-
-    }
-
     void Start()
     {
-        Transform parentTransform = this.transform;
-        for (int i = 0; i < parentTransform.childCount; i++)
-        {
-            Transform childTransform = parentTransform.GetChild(i);
-
-            if (childTransform.gameObject.activeSelf)
-            {
-                obstacleIndex = i;
-            }
-        }
+        GetObjectIndex();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

@@ -460,6 +460,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8354966854169776553, guid: 2939b80cdf9a1484b8562e8ceb5b16ed, type: 3}
+      propertyPath: elevatorIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8699888560705230230, guid: 2939b80cdf9a1484b8562e8ceb5b16ed, type: 3}
       propertyPath: m_Name
       value: Obstacle_Elevator
@@ -467,8 +471,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8699888560705230230, guid: 2939b80cdf9a1484b8562e8ceb5b16ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 892459843}
   m_SourcePrefab: {fileID: 100100000, guid: 2939b80cdf9a1484b8562e8ceb5b16ed, type: 3}
+--- !u!1 &892459842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8699888560705230230, guid: 2939b80cdf9a1484b8562e8ceb5b16ed, type: 3}
+  m_PrefabInstance: {fileID: 892459841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &892459843
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892459842}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1684107734
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908409437291952113, guid: 3f253be4c794b3b449bede47273b3fa4, type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -785,6 +824,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 693958235935264989, guid: 6892b31d04ba97c449d4f9bccb021f14, type: 3}
+      propertyPath: switchIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4004098269849888036, guid: 6892b31d04ba97c449d4f9bccb021f14, type: 3}
       propertyPath: m_Name
       value: 'Switch_Obstacle '
@@ -949,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4304626620692448040, guid: 6f7f42f53cf88624a845b1b5c5b814b6, type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9208597462496475949, guid: 6f7f42f53cf88624a845b1b5c5b814b6, type: 3}
       propertyPath: m_Name
