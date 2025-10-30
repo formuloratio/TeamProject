@@ -12,4 +12,14 @@ namespace Utils
         {
             Title, Playing, Paused, GameOver, GameClear
         }
+
+        public enum AchievementType
+        {
+            StageClear, AchievedScore , ClearTime, DeathCount
+        }
+
+        public enum AchievementClearType
+        {
+            Equals, Under, Over
+        }
 }
