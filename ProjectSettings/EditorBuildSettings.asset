@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AchievementScene.unity
     guid: b862e741be8966345a0bdecbfd3008f6
+  - enabled: 1
+    path: Assets/Scenes/PopupScene.unity
+    guid: 615a40c5d8cb54510ba8c89911910061
   m_configObjects: {}
