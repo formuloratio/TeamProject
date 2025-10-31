@@ -13,7 +13,7 @@ public class Switch : InteractionObject
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     IEnumerator Start()
