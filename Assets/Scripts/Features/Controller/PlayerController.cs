@@ -1,4 +1,5 @@
-﻿using Core;
+﻿using System.Collections;
+using Core;
 using Features.Entities;
 using UnityEngine;
 
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
             SwitchPlayer(player2);
+
     }
 
     //주 플레이어를 한 캐릭터만 선택하도록
@@ -68,6 +70,19 @@ public class PlayerController : MonoBehaviour
 
         currentPlayer.SetActive(false);
         currentPlayer.Selected(false);
+
+        newPlayer.SetActive(true);
+        newPlayer.Selected(true);
+
+        currentPlayer = newPlayer;
+    }
+
+    IEnumerator LateSwitch(BaseController newPlayer)
+    {
+        currentPlayer.SetActive(false);
+        currentPlayer.Selected(false);
+
+        yield return null; // 한 프레임 대기
 
         newPlayer.SetActive(true);
         newPlayer.Selected(true);
