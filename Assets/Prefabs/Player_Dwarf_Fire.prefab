@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2694901616690831453}
   m_Layer: 6
   m_Name: Player_Dwarf_Fire
-  m_TagString: Untagged
+  m_TagString: PlayerFire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   jumpForce: 5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   groundCheckDistance: 0.5
   selectionIcon: {fileID: 6589199119138096663}
   playerType: 1

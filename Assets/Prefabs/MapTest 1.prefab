@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9196300690676219665}
   - component: {fileID: 7869622366301457190}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Left Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8282327278839274696}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MapTest 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 7558604261955775589}
   - component: {fileID: 5613132532603391895}
   - component: {fileID: 4564019744822261709}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: TileMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4883,7 +4883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6580281969756212910}
   - component: {fileID: 2051512010343190021}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4967,7 +4967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8304855587316589650}
   - component: {fileID: 3768599170644822113}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Right Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5051,7 +5051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1249556038231217702}
   - component: {fileID: 7471891817658024520}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

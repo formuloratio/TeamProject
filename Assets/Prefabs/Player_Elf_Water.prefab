@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7774557834581002985}
   m_Layer: 6
   m_Name: Player_Elf_Water
-  m_TagString: Untagged
+  m_TagString: PlayerWater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   jumpForce: 5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   groundCheckDistance: 0.5
   selectionIcon: {fileID: 8692206522009052144}
   playerType: 2
