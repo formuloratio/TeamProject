@@ -34,9 +34,14 @@ public class Door : MonoBehaviour
         }
     }
 
+    //게임 클리어 성공 요건.
     private void CheckGameClear()
     {
-        if (GameClearManager.Instance.FireOnLeftDoor && GameClearManager.Instance.WaterOnRightDoor)
+        if (GameClearManager.Instance.FireOnLeftDoor &&
+            GameClearManager.Instance.WaterOnRightDoor &&
+            GameManager.Instance.CurrentTime > 0f)
+        {
             GameClearManager.Instance.ShowClearPanel();
+        }
     }
 }
