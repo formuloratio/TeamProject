@@ -35,18 +35,19 @@ public class PopupManager : MonoBehaviour
         }
     }
 
+    //팝업 켜기 끄기
     public void TogglePopup(bool? forceShow = null)
     {
         if (popupCanvas == null) return;
 
-        bool show = forceShow ?? !popupCanvas.activeSelf;
+        bool show = forceShow ?? !popupCanvas.activeSelf; //forceShow가 null값이 아니면 상ㅇ
         popupCanvas.SetActive(show);
 
-        CanvasGroup cg = popupCanvas.GetComponent<CanvasGroup>();
+        CanvasGroup cg = popupCanvas.GetComponent<CanvasGroup>(); // 팝업 ui클릭 가능, 불가
         if (cg == null)
             cg = popupCanvas.AddComponent<CanvasGroup>();
 
-        // 팝업 활성화 상태에 맞춰 버튼 클릭 가능하도록 설정
+        // 팝업 활성화 상태에 맞춰 버튼 클릭 가능하도록 설정 버튼 활성화 비 활성화
         cg.interactable = show;
         cg.blocksRaycasts = show;
 

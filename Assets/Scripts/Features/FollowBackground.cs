@@ -17,7 +17,7 @@ public class FollowBackground : MonoBehaviour
 
     void Start()
     {
-        if (targetNum1 == null || targetNum1 == null)
+        if (targetNum1 == null || targetNum2 == null)
             return;
 
         // 배경의 초기 위치 저장
@@ -29,7 +29,7 @@ public class FollowBackground : MonoBehaviour
 
     void Update()
     {
-        if (targetNum1 == null)
+        if (targetNum1 == null || targetNum2 == null)
             return;
 
         // targetNum이 초기 위치로부터 얼마나 이동했는지 계산
