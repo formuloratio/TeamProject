@@ -1,4 +1,4 @@
-using Features.Entities;
+ï»¿using Features.Entities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,16 +16,18 @@ public class Pitfall : Obstacle
         {
             if (obstacleIndex == fireIndex)
             {
-                //°ÔÀÓ ¿À¹ö
+                //ê²Œìž„ ì˜¤ë²„
                 Destroy(collider.gameObject);
+                Debug.Log("ì£½ì—ˆìŠµë‹ˆë‹¤.");
             }
         }
         else if (collider.CompareTag("PlayerFire"))
         {
             if (obstacleIndex == waterIndex)
             {
-                //°ÔÀÓ ¿À¹ö
+                //ê²Œìž„ ì˜¤ë²„
                 Destroy(collider.gameObject);
+                Debug.Log("ì£½ì—ˆìŠµë‹ˆë‹¤.");
             }
         }
     }

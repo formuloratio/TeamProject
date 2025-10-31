@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace Features.Entities
 {
@@ -15,7 +15,7 @@ namespace Features.Entities
         protected bool isWater { get; set; }
         protected int[] switchIndexArray;
 
-        public virtual void GetObjectIndex() //¿ÀºêÁ§Æ® ¼ø¼­¿¡ µû¸¥ ÀÎµ¦½º ÃßÃâ
+        public virtual void GetObjectIndex() //ì˜¤ë¸Œì íŠ¸ ìˆœì„œì— ë”°ë¥¸ ì¸ë±ìŠ¤ ì¶”ì¶œ
         {
             Transform parentTransform = this.transform;
             for (int i = 0; i < parentTransform.childCount; i++)
@@ -24,7 +24,16 @@ namespace Features.Entities
 
                 if (childTransform.gameObject.activeSelf)
                 {
-                    obstacleIndex = i;
+                    //obstacleIndex = i;
+
+                    if (childTransform.CompareTag("ObstacleFire"))
+                    {
+                        obstacleIndex = fireIndex;
+                    }
+                    else if (childTransform.CompareTag("ObstacleWater"))
+                    {
+                        obstacleIndex = waterIndex;
+                    }
                 }
             }
         }
