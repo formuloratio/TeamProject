@@ -9,5 +9,6 @@ public class Hole : MonoBehaviour
         //게임 오버
         Destroy(collision.gameObject);
         Debug.Log("죽었습니다.");
+        GameOverManager.Instance.ShowGameOver();
     }
 }
