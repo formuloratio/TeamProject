@@ -53,4 +53,5 @@ public class Elevator : MonoBehaviour
         }
         this.gameObject.transform.position = minPos;
     }
+  
 }
