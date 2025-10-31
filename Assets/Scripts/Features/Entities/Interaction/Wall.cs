@@ -1,28 +1,14 @@
-using Features.Entities;
+﻿using Features.Entities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle_Wall : InteractionObject
+public class Wall : Obstacle
 {
-    public override void Interact()
-    {
-
-    }
-
     void Start()
     {
-        Transform parentTransform = this.transform;
-        for (int i = 0; i < parentTransform.childCount; i++)
-        {
-            Transform childTransform = parentTransform.GetChild(i);
-
-            if (childTransform.gameObject.activeSelf)
-            {
-                obstacleIndex = i;
-            }
-        }
+        GetObjectIndex();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
