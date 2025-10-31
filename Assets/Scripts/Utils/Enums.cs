@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Utils
 {
-        public enum PlayerType
+        public enum ElementType
         {
             Fire,Water
 
