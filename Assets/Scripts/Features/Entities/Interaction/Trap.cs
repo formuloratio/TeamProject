@@ -35,6 +35,7 @@ public class Trap : Obstacle
                 //게임 오버
                 Destroy(collision.gameObject.gameObject);
                 Debug.Log("죽었습니다.");
+                GameOverManager.Instance.ShowGameOver();
             }
         }
         else if (collision.gameObject.CompareTag("PlayerFire"))
@@ -44,6 +45,7 @@ public class Trap : Obstacle
                 //게임 오버
                 Destroy(collision.gameObject.gameObject);
                 Debug.Log("죽었습니다.");
+                GameOverManager.Instance.ShowGameOver();
             }
         }
     }

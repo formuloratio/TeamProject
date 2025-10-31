@@ -103,8 +103,8 @@ public class BaseController : MonoBehaviour
         //캐릭터 아래로 레이 쏘기
 
         float extraHeight = 0.15f;
-
-        Vector2 FootRay = new Vector2(transform.position.x, transform.position.y - (GetComponent<Collider2D>().bounds.extents.y));
+        Collider2D col = GetComponent<Collider2D>();
+        Vector2 FootRay = new Vector2(transform.position.x, col.bounds.min.y + 0.05f);
 
         RaycastHit2D hit = Physics2D.Raycast(FootRay, Vector2.down, extraHeight, groundLayer);
         isGrounded = hit.collider != null;

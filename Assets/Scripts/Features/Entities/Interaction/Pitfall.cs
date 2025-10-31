@@ -19,6 +19,7 @@ public class Pitfall : Obstacle
                 //게임 오버
                 Destroy(collider.gameObject);
                 Debug.Log("죽었습니다.");
+                GameOverManager.Instance.ShowGameOver();
             }
         }
         else if (collider.CompareTag("PlayerFire"))
@@ -28,6 +29,7 @@ public class Pitfall : Obstacle
                 //게임 오버
                 Destroy(collider.gameObject);
                 Debug.Log("죽었습니다.");
+                GameOverManager.Instance.ShowGameOver();
             }
         }
     }
