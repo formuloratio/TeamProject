@@ -11,11 +11,18 @@ namespace Features.Scene
         private SceneTransitionManager _sceneTransitionManager;
         [SerializeField] private string nextSceneName = "GamePlayScene";
         private string achievementsSceneName = "AchievementScene";
+        private AudioManager _audioManager;
 
         void Awake()
         {
             _gameManager = GameManager.Instance;
             _sceneTransitionManager = SceneTransitionManager.Instance;
+            _audioManager = AudioManager.Instance;
+        }
+
+        void Start()
+        {
+            _audioManager.PlayBgm(_audioManager.titleBgm);
         }
 
 

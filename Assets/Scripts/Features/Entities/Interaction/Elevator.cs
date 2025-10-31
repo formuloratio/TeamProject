@@ -13,6 +13,12 @@ public class Elevator : MonoBehaviour
 
     public float maxLine = 5.4f;
     public float minLine = 0f;
+    private AudioManager _audioManager;
+    private bool isAudioPlayed = false;
+    void Awake()
+    {
+        _audioManager = AudioManager.Instance;
+    }
 
     private void Update()
     {
@@ -38,6 +44,12 @@ public class Elevator : MonoBehaviour
             maxPos.y = maxLine;
         }
         this.gameObject.transform.position = maxPos;
+        if (!isAudioPlayed)
+        {
+            _audioManager.PlaySfx(_audioManager.elevatorMoveSfx);
+            isAudioPlayed = true;
+        }
+
     }
 
     private void ElevatorMoveDown()

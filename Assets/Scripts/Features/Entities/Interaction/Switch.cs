@@ -11,9 +11,12 @@ public class Switch : InteractionObject
 
     Animator animator;
 
+    private AudioManager _audioManager;
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        _audioManager = AudioManager.Instance;
     }
 
     IEnumerator Start()
@@ -41,6 +44,7 @@ public class Switch : InteractionObject
                 SwitchingManager.Instance.isSwitching = true;
                 SwitchingManager.Instance.switchTagCompare[switchIndex] = 1;
                 Debug.Log("스위치 ON");
+                _audioManager.PlaySfx(_audioManager.switchClickSfx);
             }
         }
         //플레이어가 불일 때
@@ -55,8 +59,10 @@ public class Switch : InteractionObject
                 SwitchingManager.Instance.isSwitching = true;
                 SwitchingManager.Instance.switchTagCompare[switchIndex] = 1;
                 Debug.Log("스위치 ON");
+                _audioManager.PlaySfx(_audioManager.switchClickSfx);
             }
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collider)

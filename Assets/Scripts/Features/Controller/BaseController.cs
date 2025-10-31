@@ -30,6 +30,10 @@ public class BaseController : MonoBehaviour
     private float jumpCooldown = 0.1f;
     private float jumpTimer = 0f;
 
+    [SerializeField]private AudioSource audioSource;
+    [SerializeField]private AudioClip walkSfx;
+    [SerializeField]private AudioClip jumpSfx;
+
     public PlayerType Element => playerType;
     protected virtual void Awake()
     {
@@ -89,13 +93,19 @@ public class BaseController : MonoBehaviour
         rb.velocity = new Vector2(x * moveSpeed, rb.velocity.y);
 
         if (x != 0)
+        {
             sr.flipX = x < 0;
+            audioSource.clip = walkSfx;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
     }
 
     protected virtual void Jump()
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         isGrounded = false;
+        audioSource.PlayOneShot(jumpSfx);
     }
 
     protected virtual void CheckGround()

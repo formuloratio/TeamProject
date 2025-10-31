@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BaseController player2;
 
     private BaseController currentPlayer;
+    private AudioSource _audioSource;
+    private AudioManager _audioManager;
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
                 player2 = players[1];
             }
         }
+        _audioManager = AudioManager.Instance;
     }
 
     private void Start()
@@ -75,6 +78,7 @@ public class PlayerController : MonoBehaviour
         newPlayer.Selected(true);
 
         currentPlayer = newPlayer;
+        _audioManager.PlaySfx(_audioManager.playerChange);
     }
 
     IEnumerator LateSwitch(BaseController newPlayer)

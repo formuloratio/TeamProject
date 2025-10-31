@@ -7,6 +7,12 @@ public enum DoorType { Left, Right }
 public class Door : MonoBehaviour
 {
     public DoorType doorType;
+    private AudioManager _audioManager;
+
+    void Awake()
+    {
+        _audioManager = AudioManager.Instance;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,6 +43,12 @@ public class Door : MonoBehaviour
     private void CheckGameClear()
     {
         if (GameClearManager.Instance.FireOnLeftDoor && GameClearManager.Instance.WaterOnRightDoor)
+        {
             GameClearManager.Instance.ShowClearPanel();
+            _audioManager.PlaySfx(_audioManager.enterDoorSfx);
+        }
+
+
+
     }
 }

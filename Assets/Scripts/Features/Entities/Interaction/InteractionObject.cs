@@ -37,5 +37,10 @@ namespace Features.Entities
                 }
             }
         }
+
+        private void OnDestroy()
+        {
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.deleteObjectSfx);
+        }
     }
 }
