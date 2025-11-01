@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BaseController player2;
 
     private BaseController currentPlayer;
-    private AudioSource _audioSource;
     private AudioManager _audioManager;
 
     private void Awake()

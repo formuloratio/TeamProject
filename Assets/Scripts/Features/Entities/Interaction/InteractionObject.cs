@@ -40,6 +40,7 @@ namespace Features.Entities
 
         private void OnDestroy()
         {
+            if (AudioManager.Instance == null) return;
             AudioManager.Instance.PlaySfx(AudioManager.Instance.deleteObjectSfx);
         }
     }

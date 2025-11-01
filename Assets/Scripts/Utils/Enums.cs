@@ -22,4 +22,9 @@ namespace Utils
         {
             Equals, Under, Over
         }
+
+        public enum ProgressType
+        {
+            Add, Set
+        }
 }

@@ -9,10 +9,15 @@ namespace Core
     {
         public static GameManager Instance { get; private set; }
         private AudioManager _audioManager;
+        private AchievementManager _achievementManager;
 
         private GameState _state;
 
         public GameState CurrentState => _state;
+
+        private int _currentStageNum = 0;
+        public int CurrentStageNum => _currentStageNum;
+        private SceneTransitionManager _sceneTransitionManager;
 
 
         [Header("Timer Settings")]
@@ -32,10 +37,13 @@ namespace Core
             Instance = this;
             DontDestroyOnLoad(gameObject);
             _state = GameState.Title;
-            _audioManager = AudioManager.Instance;
+
         }
         private void Start()
         {
+            _audioManager = AudioManager.Instance;
+            _sceneTransitionManager = SceneTransitionManager.Instance;
+            _achievementManager = AchievementManager.Instance;
             OnGameStarted(); // 게임 시작 시 자동으로 타이머 시작
         }
 
@@ -78,11 +86,14 @@ namespace Core
         {
             _state = GameState.GameOver;
             _audioManager.PlaySfx(_audioManager.gameOver);
+            _achievementManager.CheckAndSetProgress(ProgressType.Add, AchievementType.DeathCount);
         }
 
         public void OnGameClear()
         {
             _state = GameState.GameClear;
+            _currentStageNum++;
+            _achievementManager.CheckAndSetProgress(ProgressType.Set, AchievementType.StageClear, _currentStageNum);
             _audioManager.PlaySfx(_audioManager.clearSfx);
         }
         public void PauseGame()
@@ -98,6 +109,32 @@ namespace Core
             Time.timeScale = 1f;
             _audioManager.ResumeBGM();
         }
+
+        public void ResetCurrentStage()
+        {
+            _currentStageNum = 0;
+        }
+
         #endregion
+        public void GoNextStage()
+        {
+            if (!IsNextStageExist()) return;
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            int nextSceneIndex = currentSceneIndex + 1;
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+
+                if (Time.timeScale == 0f)
+                {
+                    Time.timeScale = 1f;
+                }
+                _sceneTransitionManager.FadeAndLoadSceneByIndex(nextSceneIndex);
+            }
+        }
+
+        public bool IsNextStageExist()
+        {
+            return _currentStageNum < GameStateConstans.MaxStageNum;
+        }
     }
 }

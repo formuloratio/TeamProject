@@ -31,7 +31,6 @@ public class BaseController : MonoBehaviour
     private float jumpTimer = 0f;
 
     [SerializeField]private AudioSource audioSource;
-    [SerializeField]private AudioClip walkSfx;
     [SerializeField]private AudioClip jumpSfx;
 
     public PlayerType Element => playerType;
@@ -95,9 +94,6 @@ public class BaseController : MonoBehaviour
         if (x != 0)
         {
             sr.flipX = x < 0;
-            audioSource.clip = walkSfx;
-            audioSource.loop = true;
-            audioSource.Play();
         }
     }
 

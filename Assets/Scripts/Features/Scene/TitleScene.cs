@@ -30,6 +30,7 @@ namespace Features.Scene
         {
             _gameManager.OnGameStarted();
             _sceneTransitionManager.FadeAndLoadScene(nextSceneName);
+            _gameManager.ResetCurrentStage();
         }
 
         public void OnAchievementsLoaded()

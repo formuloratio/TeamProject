@@ -13,6 +13,7 @@ namespace Data.ScriptableObjects
         public int targetCount;
         public AchievementClearType clearType;
         public AchievementType achievementType;
+        public ProgressType progressType;
 
     }
 }

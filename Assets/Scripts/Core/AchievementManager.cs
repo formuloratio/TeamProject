@@ -3,6 +3,7 @@ using System.Linq;
 using Data.ScriptableObjects;
 using Features.Entities;
 using UnityEngine;
+using Utils;
 
 namespace Core
 {
@@ -33,29 +34,26 @@ namespace Core
 
         #region public methods
 
-        /// <summary>
-        /// 특정 업적의 진행도를 증가시키고 달성 여부를 확인합니다.
-        /// </summary>
-        /// <param name="id">업적 ID</param>
-        /// <param name="amount">증가시킬 진행도 (기본값: 0)</param>
-        public void AddProgress(string id, int amount = 0)
+
+
+
+        public void CheckAndSetProgress(ProgressType type, AchievementType achievementType, int amount = 1)
         {
-            if (!_achievements.ContainsKey(id))
+            List<Achievement> achievements = new List<Achievement>();
+            foreach (var achievement in _achievements.Values)
             {
-                return;
+                if (achievement.AchievementData.progressType == type && achievement.AchievementData.achievementType == achievementType)
+                {
+                    achievements.Add(achievement);
+                }
             }
-
-            var achievement = _achievements[id];
-            bool wasUnlocked = achievement.IsUnlocked;
-
-            achievement.AddProgress(amount);
-
-            if (!wasUnlocked && achievement.IsUnlocked)
+            if (type == ProgressType.Add)
             {
-                Debug.Log($"[AchievementManager] achievement Defeated: {achievement.AchievementData.displayName}");
+                this.AddProgress(achievements, amount);
+            }else if (type == ProgressType.Set)
+            {
+                this.SetProgress(achievements, amount);
             }
-
-            SaveProgress();
         }
 
         /// <summary>
@@ -79,6 +77,23 @@ namespace Core
 
         #endregion
 
+        private void AddProgress(List<Achievement> achievements, int amount)
+        {
+            foreach (var achievement in achievements)
+            {
+                achievement.CurrentCount += amount;
+            }
+            SaveProgress();
+        }
+
+        private void SetProgress(List<Achievement> achievements, int value)
+        {
+            foreach (var achievement in achievements)
+            {
+                achievement.SetProgress(value);
+            }
+            SaveProgress();
+        }
 
         private void InitializeAchievements()
         {
@@ -141,6 +156,7 @@ namespace Core
                 }
             }
         }
+
 
 
 

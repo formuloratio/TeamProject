@@ -595,6 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372b81bb02c80064d8979c049155689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelTimeLimit: 60
 --- !u!114 &1722635911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +642,7 @@ MonoBehaviour:
   elevatorMoveSfx: {fileID: 8300000, guid: 35c97f4ad1759b2488678d821a45e1e6, type: 3}
   switchClickSfx: {fileID: 8300000, guid: e8c176a625f7aba45a4b24769c1e7a00, type: 3}
   enterDoorSfx: {fileID: 8300000, guid: 390373200c79434418e56663abb08112, type: 3}
-  gameOver: {fileID: 0}
+  gameOver: {fileID: 8300000, guid: 7d9f118f10778784884b790150ac12a3, type: 3}
   playerChange: {fileID: 8300000, guid: 61d0ab941afdc884dae7c3cf821d901d, type: 3}
   clearSfx: {fileID: 8300000, guid: d84a4b0c4ce51bf4990c48e4f6bc11e2, type: 3}
   uiClickSfx: {fileID: 8300000, guid: ae12b4408f4005f49a7bcee18d3a12d2, type: 3}

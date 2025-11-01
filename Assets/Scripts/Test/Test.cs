@@ -14,7 +14,6 @@ namespace Test
         }
         void Start()
         {
-            _achievementManager.AddProgress("Death_Over_2",2);
 
         }
     }

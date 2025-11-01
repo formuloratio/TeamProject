@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4235ea6c1af847079cb20824dd42d18b, type: 3}
-  m_Name: Clear_Equal_1
+  m_Name: Death_Equal_2
   m_EditorClassIdentifier: 
-  id: Clear_Equal_2
-  displayName: 2 Stage Clear
-  description: All Stage Clear
+  id: Death_Equal_2
+  displayName: Death over 2 more
+  description: experience death 2 more
   targetCount: 2
-  clearType: 0
-  achievementType: 0
+  clearType: 2
+  achievementType: 3

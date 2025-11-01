@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -73,6 +74,16 @@ namespace Core
             }
 
             canvasGroup.alpha = targetAlpha;
+        }
+        public void FadeAndLoadSceneByIndex(int buildIndex)
+        {
+            if (buildIndex < 0 || buildIndex >= SceneManager.sceneCountInBuildSettings)
+            {
+                return;
+            }
+            string scenePath = SceneUtility.GetScenePathByBuildIndex(buildIndex);
+            string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+            FadeAndLoadScene(sceneName);
         }
     }
 }

@@ -43,9 +43,13 @@ public class GameClearManager : MonoBehaviour
     public void ShowClearPanel()
     {
         clearPanel.SetActive(true);
+
         GameManager.Instance.OnGameClear();
         Time.timeScale = 0f;
-
+        if (!GameManager.Instance.IsNextStageExist())
+        {
+            nextStageButton.gameObject.SetActive(false);
+        }
         // 남은 시간으로 랭크 계산
         float timeTaken = GameManager.Instance.levelTimeLimit - GameManager.Instance.CurrentTime;
 
@@ -86,6 +90,7 @@ public class GameClearManager : MonoBehaviour
     //넥스트 스테이지는 안 만드어서 구현 안함 아직.
     private void GoToNextStage()
     {
-
+        Debug.Log("Going to the next stage");
+        GameManager.Instance.GoNextStage();
     }
 }

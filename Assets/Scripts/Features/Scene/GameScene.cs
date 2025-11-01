@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace Features.Scene
 {
-    public class GameScene
+    public class GameScene : MonoBehaviour
     {
         private AudioManager _audioManager;
 
