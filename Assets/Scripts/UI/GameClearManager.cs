@@ -54,13 +54,22 @@ public class GameClearManager : MonoBehaviour
         float timeTaken = GameManager.Instance.levelTimeLimit - GameManager.Instance.CurrentTime;
 
         string rank;
+        string colorCode;
         if (timeTaken <= 20f)
+        {
             rank = "S";
+            colorCode = "#FFD700";
+        }
         else if (timeTaken <= 40f)
+        {
             rank = "A";
+            colorCode = "#A020F0";
+        }
         else // 40~59초
+        {
             rank = "B";
-
+            colorCode = "#1E90FF";
+        }
         if (rankText != null)
             rankText.text = $"Rank: {rank}";
     }
