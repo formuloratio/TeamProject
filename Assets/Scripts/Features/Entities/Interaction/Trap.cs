@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 // 스위치 상호작용으로 제거 가능한 함점
 public class Trap : Obstacle

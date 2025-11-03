@@ -1,7 +1,4 @@
-﻿using Features.Entities;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 //스위치 상호작용에 따라 움직이는 엘리베이터
 public class Elevator : MonoBehaviour

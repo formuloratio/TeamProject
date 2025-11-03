@@ -1,7 +1,4 @@
-using Features.Entities;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using Features.Entities;
 
 public class Obstacle : InteractionObject
 {

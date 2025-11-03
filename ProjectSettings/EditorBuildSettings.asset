@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PopupScene.unity
     guid: 615a40c5d8cb54510ba8c89911910061
+  - enabled: 1
+    path: Assets/Scenes/GamePlayScene_Stage3.unity
+    guid: f2d5cc1bfabd1174a85320aea8011647
   m_configObjects: {}
