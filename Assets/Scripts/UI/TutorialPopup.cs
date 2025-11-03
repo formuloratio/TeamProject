@@ -1,14 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core; // GameManager 네임스페이스 필요(시간조절)
 
 public class TutorialPopup : MonoBehaviour
 {
     [SerializeField] private GameObject[] panels;
     private int currentIndex = 0;
-
     //씬이 다시 로드돼도 유지되는 변수
     private static bool hasShown = false;
+
+    private void Awake()
+    {
+        //게임로드 즉시 정지
+        Time.timeScale = 0f;
+
+        //GameManager있을 때 상태 잠시 Pause로
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.PauseGame();
+        }
+    }
 
     private void Start()
     {
@@ -69,9 +81,15 @@ public class TutorialPopup : MonoBehaviour
         {
             panel.SetActive(false);
         }
+        Debug.Log("튜토리얼 종료");
 
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ResumeGame();
+            Debug.Log("게임 재개 호출");
+        }
         //게임 재개
-        Time.timeScale = 1f;
+        
         gameObject.SetActive(false);
     }
 }
