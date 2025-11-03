@@ -89,11 +89,12 @@ namespace Core
             _achievementManager.CheckAndSetProgress(ProgressType.Add, AchievementType.DeathCount);
         }
 
-        public void OnGameClear()
+        public void OnGameClear(float timeTaken)
         {
             _state = GameState.GameClear;
             _currentStageNum++;
             _achievementManager.CheckAndSetProgress(ProgressType.Set, AchievementType.StageClear, _currentStageNum);
+            _achievementManager.CheckAndSetProgress(ProgressType.Set, AchievementType.GetRank, (int)timeTaken);
             _audioManager.PlaySfx(_audioManager.clearSfx);
         }
         public void PauseGame()

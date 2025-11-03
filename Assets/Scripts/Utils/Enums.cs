@@ -15,7 +15,7 @@ namespace Utils
 
         public enum AchievementType
         {
-            StageClear, AchievedScore , ClearTime, DeathCount
+            StageClear, DeathCount, GetRank
         }
 
         public enum AchievementClearType
