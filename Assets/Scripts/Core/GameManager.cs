@@ -137,5 +137,12 @@ namespace Core
         {
             return _currentStageNum < GameStateConstans.MaxStageNum;
         }
+        public void InitStageTimer(float timeLimit, bool isTutorial = false)
+        {
+            levelTimeLimit = timeLimit;   // 스테이지 제한시간
+            currentTime = levelTimeLimit;      // 타이머 초기화
+            _state = isTutorial ? GameState.Paused : GameState.Playing;
+            Time.timeScale = 1f;
+        }
     }
 }

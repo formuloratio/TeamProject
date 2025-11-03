@@ -8,15 +8,35 @@ using TMPro;
 
 public class TimerUI : MonoBehaviour
 {
-    //inspect에서 연결 가능하게
     [SerializeField] private TMP_Text timerText;
 
+    private void OnEnable()
+    {
+        // 씬 전환 직후 또는 TimerUI가 활성화될 때 즉시 갱신
+        UpdateTimer();
+    }
 
     private void Update()
     {
-        if (GameManager.Instance != null && GameManager.Instance.CurrentState == GameState.Playing)//게임 상태가 Playing일 때만 타이머를 갱신.
+        if (GameManager.Instance != null && GameManager.Instance.CurrentState == GameState.Playing)
         {
-            timerText.text = GameManager.Instance.CurrentTime.ToString("F2"); //CurrentTime을 불러와 UI에 표시. "F2": 소수점 2자리까지 표시 
+            UpdateTimer();
         }
+    }
+
+    // 타이머 갱신 함수
+    public void UpdateTimer()
+    {
+        if (GameManager.Instance != null)
+        {
+            timerText.text = GameManager.Instance.CurrentTime.ToString("F2");
+        }
+    }
+
+    // Retry나 씬 시작 직후 호출 가능
+    public void Init()
+    {
+        if (GameManager.Instance != null)
+            timerText.text = GameManager.Instance.CurrentTime.ToString("F2");
     }
 }
