@@ -8,6 +8,6 @@ namespace Utils
 
     public static class GameStateConstans
     {
-        public const int MaxStageNum = 2;
+        public const int MaxStageNum = 3;
     }
 }
