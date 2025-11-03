@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
         // 초기 활성화 설정
         currentPlayer = player1;
+
         player1.SetActive(true);
         player2.SetActive(false);
 

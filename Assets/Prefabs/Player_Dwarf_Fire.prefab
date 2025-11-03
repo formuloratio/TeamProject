@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: {fileID: 2694901616690831453}
-  player2: {fileID: 0}
+  player2: {fileID: 7774557834581002985, guid: 603e42b605aacfb44ab9c51e1a6317ae, type: 3}
 --- !u!114 &2694901616690831453
 MonoBehaviour:
   m_ObjectHideFlags: 0

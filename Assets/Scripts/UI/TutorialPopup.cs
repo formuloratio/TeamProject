@@ -7,8 +7,22 @@ public class TutorialPopup : MonoBehaviour
     [SerializeField] private GameObject[] panels;
     private int currentIndex = 0;
 
+    //씬이 다시 로드돼도 유지되는 변수
+    private static bool hasShown = false;
+
     private void Start()
     {
+        //이미 튜토리얼 본 적이 있다면 바로 종료
+        if (hasShown)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
+        //튜토리얼 처음 실행
+
+        hasShown = true;
+
         //게임 정지
 
         Time.timeScale = 0f;
@@ -18,6 +32,7 @@ public class TutorialPopup : MonoBehaviour
         {
             panels[i].SetActive(i == 0);
         }
+
     }
 
     public void NextPanel()
@@ -57,5 +72,6 @@ public class TutorialPopup : MonoBehaviour
 
         //게임 재개
         Time.timeScale = 1f;
+        gameObject.SetActive(false);
     }
 }
