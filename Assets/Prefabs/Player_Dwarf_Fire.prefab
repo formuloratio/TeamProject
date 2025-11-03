@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b873ebf4019be4fb7b2944cb5a4293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 2694901616690831453}
+  player1: {fileID: 2694901616690831453}
+  player2: {fileID: 0}
 --- !u!114 &2694901616690831453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 5
+  jumpForce: 6
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
