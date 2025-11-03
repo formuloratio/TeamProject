@@ -27,17 +27,18 @@ public class TutorialPopup : MonoBehaviour
         //이미 튜토리얼 본 적이 있다면 바로 종료
         if (hasShown)
         {
+            //게임이 멈추지 않도록 보정
+            if (GameManager.Instance != null)
+                GameManager.Instance.ResumeGame();
+            else
+                Time.timeScale = 1f;
+
             gameObject.SetActive(false);
             return;
         }
 
         //튜토리얼 처음 실행
-
         hasShown = true;
-
-        //게임 정지
-
-        Time.timeScale = 0f;
 
         //처음에는 키세팅패널만
         for (int i = 0; i < panels.Length; i++)
@@ -88,8 +89,12 @@ public class TutorialPopup : MonoBehaviour
             GameManager.Instance.ResumeGame();
             Debug.Log("게임 재개 호출");
         }
-        //게임 재개
-        
-        gameObject.SetActive(false);
+        else
+        {
+            //튜토리얼 스킵시 게임 재개
+            Time.timeScale = 1f;
+        }
+            //게임 재개
+            gameObject.SetActive(false);
     }
 }
