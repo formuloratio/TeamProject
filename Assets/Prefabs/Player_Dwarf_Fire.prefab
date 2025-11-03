@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b873ebf4019be4fb7b2944cb5a4293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 2694901616690831453}
+  player1: {fileID: 2694901616690831453}
+  player2: {fileID: 0}
 --- !u!114 &2694901616690831453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 20
+  jumpForce: 6
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -148,7 +148,6 @@ MonoBehaviour:
   selectionIcon: {fileID: 6589199119138096663}
   playerType: 1
   audioSource: {fileID: 1726261086315157523}
-  walkSfx: {fileID: 8300000, guid: 74cb8c6692ead40459ac517151303b27, type: 3}
   jumpSfx: {fileID: 8300000, guid: 26aa45d92f7572347a5edbc3260db177, type: 3}
 --- !u!82 &1726261086315157523
 AudioSource:
