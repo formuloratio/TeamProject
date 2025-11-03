@@ -73,7 +73,7 @@ namespace Core
             _state = GameState.Playing;
             currentTime = levelTimeLimit; // 타이머 초기화
             Time.timeScale = 1f;
-            _audioManager.StopBGM();
+            _audioManager.PlayBgm(_audioManager.gameplayBgm);
         }
 
         public void OnGamePaused()
