@@ -351,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5145313509953988076, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5145313509953988076, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: m_LocalPosition.z
@@ -415,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7143673365200692827, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: minLine
-      value: 2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 7143673365200692827, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: elevatorIndex
@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5145313509953988076, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5145313509953988076, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: m_LocalPosition.z
@@ -559,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7143673365200692827, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: minLine
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7143673365200692827, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: elevatorIndex
@@ -1050,7 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5145313509953988076, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.92
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5145313509953988076, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1094,7 +1094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7143673365200692827, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: minLine
-      value: 2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 7143673365200692827, guid: 7dfc24b719ddb40449e55dd9ba1c5126, type: 3}
       propertyPath: elevatorIndex
