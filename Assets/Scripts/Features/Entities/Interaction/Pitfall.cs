@@ -1,7 +1,4 @@
-﻿using Features.Entities;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Pitfall : Obstacle
 {
