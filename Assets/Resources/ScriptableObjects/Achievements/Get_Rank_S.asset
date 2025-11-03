@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4235ea6c1af847079cb20824dd42d18b, type: 3}
-  m_Name: Death_Equal_10
+  m_Name: Get_Rank_S
   m_EditorClassIdentifier: 
-  id: Death_Equal_2
-  displayName: Death over 2 more
-  description: experience death 2 more
-  targetCount: 2
-  clearType: 2
-  achievementType: 1
-  progressType: 0
+  id: Get_Rank_A
+  displayName: Get Rank A
+  description: Best skill
+  targetCount: 20
+  clearType: 1
+  achievementType: 2
+  progressType: 1

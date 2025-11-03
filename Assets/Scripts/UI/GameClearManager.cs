@@ -47,13 +47,6 @@ public class GameClearManager : MonoBehaviour
 
         clearPanel.SetActive(true);
 
-        GameManager.Instance.OnGameClear();
-        Time.timeScale = 0f;
-        if (!GameManager.Instance.IsNextStageExist())
-        {
-            nextStageButton.gameObject.SetActive(false);
-        }
-        // 남은 시간으로 랭크 계산
         float timeTaken = GameManager.Instance.levelTimeLimit - GameManager.Instance.CurrentTime;
 
         string rank;
@@ -73,8 +66,18 @@ public class GameClearManager : MonoBehaviour
             rank = "B";
             colorCode = "#1E90FF";
         }
+
+        GameManager.Instance.OnGameClear(timeTaken);
+        Time.timeScale = 0f;
+        if (!GameManager.Instance.IsNextStageExist())
+        {
+            nextStageButton.gameObject.SetActive(false);
+        }
+        // 남은 시간으로 랭크 계산
+
         if (rankText != null)
             rankText.text = $"<color={colorCode}>Rank: {rank}</color>";
+
     }
 
     //현재씬 다시 로드

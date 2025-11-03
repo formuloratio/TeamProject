@@ -17,4 +17,5 @@ MonoBehaviour:
   description: experience death 2 more
   targetCount: 2
   clearType: 2
-  achievementType: 3
+  achievementType: 1
+  progressType: 0

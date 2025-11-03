@@ -1,3 +1,4 @@
+using System;
 using Data.ScriptableObjects;
 using Utils;
 
@@ -12,7 +13,15 @@ namespace Features.Entities
         public Achievement(AchievementData data)
         {
             AchievementData = data;
-            CurrentCount = 0;
+            if (data.clearType == AchievementClearType.Under)
+            {
+                CurrentCount = Int32.MaxValue;
+            }
+            else
+            {
+                CurrentCount = 0;
+            }
+
             IsUnlocked = false;
         }
 
