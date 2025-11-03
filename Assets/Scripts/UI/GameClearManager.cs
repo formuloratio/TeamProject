@@ -42,6 +42,9 @@ public class GameClearManager : MonoBehaviour
     //성공 처리 패널
     public void ShowClearPanel()
     {
+        if (PopupManager.Instance != null && PopupManager.Instance.popupCanvas.activeSelf)
+            PopupManager.Instance.TogglePopup(false);
+
         clearPanel.SetActive(true);
 
         GameManager.Instance.OnGameClear();
@@ -71,7 +74,7 @@ public class GameClearManager : MonoBehaviour
             colorCode = "#1E90FF";
         }
         if (rankText != null)
-            rankText.text = $"Rank: {rank}";
+            rankText.text = $"<color={colorCode}>Rank: {rank}</color>";
     }
 
     //현재씬 다시 로드

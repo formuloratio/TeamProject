@@ -62,8 +62,10 @@ public class PopupManager : MonoBehaviour
     {
         TogglePopup(false); // 팝업 닫기
         Time.timeScale = 1f;
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
         GameManager.Instance.OnGameStarted();
-        SceneTransitionManager.Instance.FadeAndLoadScene("GamePlayScene");
+        SceneTransitionManager.Instance.FadeAndLoadScene(currentSceneName);
 
     }
     //게임 이어서 시작 
