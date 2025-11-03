@@ -25,6 +25,9 @@ public class GameOverManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        if (PopupManager.Instance != null && PopupManager.Instance.popupCanvas.activeSelf)
+            PopupManager.Instance.TogglePopup(false);
+
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
 

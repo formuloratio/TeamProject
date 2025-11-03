@@ -21,6 +21,11 @@ public class Arrow : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerWater") || (collision.gameObject.CompareTag("PlayerFire")))
         {
             Debug.Log("화살에 맞음");
+
+            if (GameOverManager.Instance != null)
+            {
+                GameOverManager.Instance.ShowGameOver();
+            }
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
