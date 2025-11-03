@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 20
+  jumpForce: 5
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -148,7 +148,6 @@ MonoBehaviour:
   selectionIcon: {fileID: 6589199119138096663}
   playerType: 1
   audioSource: {fileID: 1726261086315157523}
-  walkSfx: {fileID: 8300000, guid: 74cb8c6692ead40459ac517151303b27, type: 3}
   jumpSfx: {fileID: 8300000, guid: 26aa45d92f7572347a5edbc3260db177, type: 3}
 --- !u!82 &1726261086315157523
 AudioSource:
