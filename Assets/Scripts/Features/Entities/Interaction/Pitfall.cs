@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Features.Entities;
+using UnityEngine;
 
-public class Pitfall : Obstacle
+public class Pitfall : InteractionObject
 {
     void Start()
     {
