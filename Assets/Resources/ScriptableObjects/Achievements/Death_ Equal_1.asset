@@ -16,6 +16,6 @@ MonoBehaviour:
   displayName: First Death
   description: experience death first
   targetCount: 1
-  clearType: 0
+  clearType: 2
   achievementType: 1
   progressType: 0

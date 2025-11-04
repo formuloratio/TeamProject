@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4235ea6c1af847079cb20824dd42d18b, type: 3}
   m_Name: Death_Equal_10
   m_EditorClassIdentifier: 
-  id: Death_Equal_2
-  displayName: Death over 2 more
-  description: experience death 2 more
-  targetCount: 2
+  id: Death_Equal_10
+  displayName: Death over 10 more
+  description: experience death 10 more
+  targetCount: 10
   clearType: 2
   achievementType: 1
   progressType: 0
