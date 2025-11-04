@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4235ea6c1af847079cb20824dd42d18b, type: 3}
   m_Name: Get_Rank_B
   m_EditorClassIdentifier: 
-  id: Get_Rank_C
-  displayName: Get Rank C
+  id: Get_Rank_B
+  displayName: Get Rank B
   description: um... So So?
   targetCount: 60
   clearType: 1

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4235ea6c1af847079cb20824dd42d18b, type: 3}
   m_Name: Get_Rank_S
   m_EditorClassIdentifier: 
-  id: Get_Rank_A
-  displayName: Get Rank A
+  id: Get_Rank_S
+  displayName: Get Rank S
   description: Best skill
   targetCount: 20
   clearType: 1
