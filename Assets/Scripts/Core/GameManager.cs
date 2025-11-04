@@ -44,7 +44,6 @@ namespace Core
             _audioManager = AudioManager.Instance;
             _sceneTransitionManager = SceneTransitionManager.Instance;
             _achievementManager = AchievementManager.Instance;
-            OnGameStarted(); // 게임 시작 시 자동으로 타이머 시작
         }
 
         private void Update()
@@ -99,16 +98,22 @@ namespace Core
         }
         public void PauseGame()
         {
-            _state = GameState.Paused;
-            Time.timeScale = 0f;
-            _audioManager.PauseBGM();
+            if (_state == GameState.Playing)
+            {
+                _state = GameState.Paused;
+                Time.timeScale = 0f;
+                _audioManager.PauseBGM();
+            }
         }
 
         public void ResumeGame()
         {
-            _state = GameState.Playing;
-            Time.timeScale = 1f;
-            _audioManager.ResumeBGM();
+            if (_state == GameState.Paused)
+            {
+                _state = GameState.Playing;
+                Time.timeScale = 1f;
+                _audioManager.ResumeBGM();
+            }
         }
 
         public void ResetCurrentStage()

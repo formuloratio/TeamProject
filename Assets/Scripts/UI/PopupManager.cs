@@ -52,9 +52,9 @@ public class PopupManager : MonoBehaviour
         cg.blocksRaycasts = show;
 
         if (show)
-            GameManager.Instance.OnGamePaused();
+            GameManager.Instance.PauseGame();
         else
-            GameManager.Instance.OnGameStarted();
+            GameManager.Instance.ResumeGame();
     }
 
     //게임 새로 재시작 
@@ -73,9 +73,9 @@ public class PopupManager : MonoBehaviour
     {
         if (popupCanvas != null)
             popupCanvas.SetActive(false); // 팝업 사라지게
+
         TogglePopup(false); // 팝업 닫기
-        Time.timeScale = 1f; // 시간 재개
-        GameManager.Instance.OnGameStarted();
+        GameManager.Instance.ResumeGame();
     }
 
     //타이틀로 이동
