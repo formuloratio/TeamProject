@@ -8,54 +8,39 @@ namespace Utils
     {
         public static bool SaveToJson<T>(T data, string fileName)
         {
+            string path = GetFilePath(fileName);
+            string tempPath = path + ".tmp";
+            string backupPath = path + ".backup";
+
             try
             {
-                string path = GetFilePath(fileName);
-                string tempPath = path + ".tmp";
-                string backupPath = path + ".backup";
-
-                string json = JsonUtility.ToJson(data, true);
-
                 string directory = Path.GetDirectoryName(path);
                 if (!Directory.Exists(directory))
                 {
                     Directory.CreateDirectory(directory);
                 }
+                string json = JsonUtility.ToJson(data, true);
                 File.WriteAllText(tempPath, json);
+
                 if (File.Exists(path))
                 {
-                    if (File.Exists(backupPath))
-                    {
-                        File.Delete(backupPath);
-                    }
-                    File.Move(path, backupPath);
+                    File.Replace(tempPath, path, backupPath);
                 }
-                File.Move(tempPath, path);
-                if (File.Exists(backupPath))
+                else
                 {
-                    File.Delete(backupPath);
+                    File.Move(tempPath, path);
                 }
-                Debug.Log($"[JsonSerializer] Save Success!!\n Path: {Application.persistentDataPath}{fileName}");
+                Debug.Log($"[JsonSerializer] Save Success!! Path: {path}");
                 return true;
             }
             catch (Exception e)
             {
-                Debug.LogException(e);
-                string path = GetFilePath(fileName);
-                string backupPath = path + ".backup";
-                Debug.LogError($"[JsonSerializer] : {e.Message}");
-                if (File.Exists(backupPath))
-                {
-                    try
-                    {
-                        File.Copy(backupPath, path, true);
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.LogError($"[JsonSerializer] : {ex.Message}");
-                    }
-                }
+                Debug.LogError($"[JsonSerializer] Failed to save data to {path}. Reason: {e.ToString()}");
 
+                if (File.Exists(tempPath))
+                {
+                    File.Delete(tempPath);
+                }
                 return false;
             }
         }
