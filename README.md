@@ -272,11 +272,13 @@ https://drive.google.com/file/d/1BGSdvtFrzQ0QccxZEe-LLJn0-wriQG4D/view
 ### 1. 플레이어 관련
 
 <img width="960" height="540" alt="내향인 모임 ppt" src="https://github.com/user-attachments/assets/ec70f127-d9ab-4923-a5c1-1a66522ea975" />
+<img width="960" height="540" alt="내향인 모임 ppt (4)" src="https://github.com/user-attachments/assets/fbed0ba6-4207-4600-938b-35b73ffee9c6" />
 
 
 ### 2. 장애물 관련
 
 <img width="960" height="540" alt="내향인 모임 ppt (1)" src="https://github.com/user-attachments/assets/a8079fd1-19c5-413d-b48b-bf972a28fa41" />
+
 
 ### 3. 팝업 관련
 
