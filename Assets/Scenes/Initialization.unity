@@ -554,7 +554,7 @@ PrefabInstance:
     - target: {fileID: 1180146764689119187, guid: 132aa64fbc97a48c9b0b408ccb360af2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1722635915}
     - target: {fileID: 1180146764689119187, guid: 132aa64fbc97a48c9b0b408ccb360af2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnTitleButton
@@ -562,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 1796898522478955375, guid: 132aa64fbc97a48c9b0b408ccb360af2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1722635915}
     - target: {fileID: 1796898522478955375, guid: 132aa64fbc97a48c9b0b408ccb360af2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnRestartButton
@@ -570,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 2770487912135675576, guid: 132aa64fbc97a48c9b0b408ccb360af2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1722635915}
     - target: {fileID: 2770487912135675576, guid: 132aa64fbc97a48c9b0b408ccb360af2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnResumeButton
@@ -666,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 9045692610144650401, guid: 132aa64fbc97a48c9b0b408ccb360af2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1722635915}
     - target: {fileID: 9045692610144650401, guid: 132aa64fbc97a48c9b0b408ccb360af2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnQuitButton
