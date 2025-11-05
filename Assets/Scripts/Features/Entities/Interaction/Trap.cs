@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Features.Entities;
+using UnityEngine;
 
 // 스위치 상호작용으로 제거 가능한 함점
-public class Trap : Obstacle
+public class Trap : InteractionObject
 {
     // 스위치 인덱스랑 같아야 함 10 ~ 19 사이 지정
     public int tripIndex = 10;

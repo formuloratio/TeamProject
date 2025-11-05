@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Features.Entities;
+using UnityEngine;
 
-public class Wall : Obstacle
+public class Wall : InteractionObject
 {
     void Start()
     {
